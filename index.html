@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>garrylose.cc</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #09090b;
+            color: #d4d4d8;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #18181b;
+            padding-bottom: 14px;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+            font-size: 15px;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 6px;
+            font-size: 11px;
+            font-family: monospace;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid #27272a;
+            color: #71717a;
+            padding: 1px 6px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            color: #fff;
+            background: #18181b;
+            border-color: #3f3f46;
+        }
+
+        .version {
+            font-family: monospace;
+            font-size: 11px;
+            color: #71717a;
+            border: 1px solid #27272a;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .hero {
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #f4f4f5;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #a1a1aa;
+            margin-bottom: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #18181b;
+            border: 1px solid #27272a;
+            color: #fafafa;
+            font-weight: 500;
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #27272a;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #0284c7;
+            border-color: #0369a1;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #0369a1;
+        }
+
+        .btn-steam {
+            background: #171d25;
+            border-color: #2a475e;
+            color: #c7d5e0;
+        }
+
+        .btn-steam:hover {
+            background: #222b35;
+            border-color: #66c0f4;
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #71717a;
+            margin: 28px 0 12px;
+            transition: color 0.3s ease;
+        }
+
+        .feature-list {
+            list-style: none;
+            border: 1px solid #18181b;
+            border-radius: 6px;
+            background: #0f0f12;
+            overflow: hidden;
+        }
+
+        .feature-item {
+            padding: 10px 14px;
+            border-bottom: 1px solid #18181b;
+            color: #f4f4f5;
+            font-weight: 500;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .box {
+            background: #0f0f12;
+            border: 1px solid #18181b;
+            border-radius: 6px;
+            padding: 14px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #a1a1aa;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+        }
+
+        .box pre {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .box-warning {
+            border-color: #27272a;
+            color: #a1a1aa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 13px;
+        }
+
+        /* Forum highlight effect */
+        .forum-highlight {
+            border-color: #38bdf8 !important;
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.25) !important;
+            background: #0d1520 !important;
+        }
+
+        .title-highlight {
+            color: #38bdf8 !important;
+        }
+
+        .status {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            margin-right: 6px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 18px;
+            border-top: 1px solid #18181b;
+            display: flex;
+            justify-content: space-between;
+            color: #52525b;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="logo">garrylose</div>
+                <div class="lang-switch">
+                    <button class="lang-btn" onclick="setLang('en')">en</button>
+                    <button class="lang-btn active" onclick="setLang('ru')">ru</button>
+                </div>
+            </div>
+            <div class="version"><span class="status"></span>build 1.0.0</div>
+        </header>
+
+        <section class="hero">
+            <h1 id="title">garrys mod hvh lua addon</h1>
+            <p id="desc">
+                Чистый скрипт для локальных дуэлей и синглплеера с друзьями. Не ломает игру остальным, работает локально у того, у кого установлен.
+            </p>
+            <div class="buttons">
+                <a href="garrylose_v1.0.0.zip" download="garrylose_v1.0.0.zip" class="btn btn-primary" id="btn-install">Скачать v1.0.0</a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3783289959" target="_blank" rel="noopener noreferrer" class="btn btn-steam" id="btn-steam">Steam Workshop</a>
+                <a href="#forum" class="btn" id="btn-forum" onclick="highlightForum(event)">Forum</a>
+            </div>
+        </section>
+
+        <div class="section-title" id="sec-features">Функционал</div>
+        <ul class="feature-list">
+            <li class="feature-item">Ragebot</li>
+            <li class="feature-item">Exploits</li>
+            <li class="feature-item">Anti-Aim</li>
+            <li class="feature-item">Visuals</li>
+            <li class="feature-item">Misc</li>
+        </ul>
+
+        <div class="section-title" id="sec-install">Как запустить</div>
+        <div class="box">
+            <pre id="box-install">1. Распаковать архив garrylose_v1.0.0.zip в:
+   garrysmod/addons/
+   (или подписаться в Steam Workshop)
+
+2. В игре открыть консоль (~) и прописать:
+   hvh_menu
+   (или нажать INSERT / F11)</pre>
+        </div>
+
+        <div class="section-title" id="sec-cfg">Управление</div>
+        <div class="box">
+            <pre>bind f11 hvh_menu
+bind ins hvh_menu</pre>
+        </div>
+
+        <div class="section-title" id="sec-forum">Forum</div>
+        <div class="box box-warning" id="box-forum">
+            форум пока что работает только по инвайтам доверенным людям 😥
+        </div>
+
+        <footer>
+            <span>garrylose.cc</span>
+            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3783289959" target="_blank" rel="noopener noreferrer">workshop</a>
+        </footer>
+    </div>
+
+    <script>
+        const texts = {
+            ru: {
+                title: "garrys mod hvh lua addon",
+                desc: "Чистый скрипт для локальных дуэлей и синглплеера с друзьями. Не ломает игру остальным, работает локально у того, у кого установлен.",
+                btnInstall: "Скачать v1.0.0",
+                btnSteam: "Steam Workshop",
+                btnForum: "Forum",
+                secFeatures: "Функционал",
+                secInstall: "Как запустить",
+                boxInstall: "1. Распаковать архив garrylose_v1.0.0.zip в:\n   garrysmod/addons/\n   (или подписаться в Steam Workshop)\n\n2. В игре открыть консоль (~) и прописать:\n   hvh_menu\n   (или нажать INSERT / F11)",
+                secCfg: "Управление",
+                secForum: "Forum",
+                boxForum: "форум пока что работает только по инвайтам доверенным людям 😥"
+            },
+            en: {
+                title: "garrys mod hvh lua addon",
+                desc: "Clean script for local duels and singleplayer fun with friends. Doesn't interfere with other players, runs strictly on the client that installed it.",
+                btnInstall: "Download v1.0.0",
+                btnSteam: "Steam Workshop",
+                btnForum: "Forum",
+                secFeatures: "Features",
+                secInstall: "How to launch",
+                boxInstall: "1. Extract garrylose_v1.0.0.zip into:\n   garrysmod/addons/\n   (or subscribe on Steam Workshop)\n\n2. Open developer console (~) in-game and run:\n   hvh_menu\n   (or press INSERT / F11)",
+                secCfg: "Keybinds",
+                secForum: "Forum",
+                boxForum: "the forum is currently invite-only for trusted people 😥"
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.trim() === lang);
+            });
+            const t = texts[lang];
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('desc').textContent = t.desc;
+            document.getElementById('btn-install').textContent = t.btnInstall;
+            document.getElementById('btn-steam').textContent = t.btnSteam;
+            document.getElementById('btn-forum').textContent = t.btnForum;
+            document.getElementById('sec-features').textContent = t.secFeatures;
+            document.getElementById('sec-install').textContent = t.secInstall;
+            document.getElementById('box-install').textContent = t.boxInstall;
+            document.getElementById('sec-cfg').textContent = t.secCfg;
+            document.getElementById('sec-forum').textContent = t.secForum;
+            document.getElementById('box-forum').textContent = t.boxForum;
+        }
+
+        function highlightForum(e) {
+            if (e) e.preventDefault();
+            const forumSec = document.getElementById('sec-forum');
+            const forumBox = document.getElementById('box-forum');
+            
+            forumBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            forumSec.classList.add('title-highlight');
+            forumBox.classList.add('forum-highlight');
+
+            setTimeout(() => {
+                forumSec.classList.remove('title-highlight');
+                forumBox.classList.remove('forum-highlight');
+            }, 1800);
+        }
+    </script>
+</body>
+</html>
